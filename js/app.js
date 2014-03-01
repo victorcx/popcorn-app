@@ -31,7 +31,12 @@ var
     Language = require('./language/' + 'en' + '.json'),
     
     // TMP Folder
-    tmpFolder = path.join(os.tmpDir(), 'Popcorn-Time');
+    tmpFolder = path.join(os.tmpDir(), 'Popcorn-Time'),
+
+    // Remote control
+    RC = require('./js/rc'),
+
+    ip = require('ip');
 
 
 var config = {
@@ -149,6 +154,8 @@ win.on('new-win-policy', function (frame, url, policy) {
     policy.ignore();
 });
 
+// Alert the RC address
+window.alert('Your RC is running at: ' + ip.address() + ':8889');
 
 // Prevent dropping files into the window
 window.addEventListener("dragover",function(e){
