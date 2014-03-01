@@ -12,7 +12,7 @@ var html = fs.readFileSync(__dirname + '/template.html', 'utf8');
 html = html.replace('{{ip}}', ip.address());
 
 var server = http.createServer(function(req, res){
-  res.writeHeader({'Content-Type': 'text/html'});
+  res.writeHead(200, {'Content-Type': 'text/html'});
   res.end(html);
 }).listen(8889);
 
