@@ -69,5 +69,9 @@ App.View.MovieList = Backbone.View.extend({
             }
             
         });
+
+        // Add "active" class to first element
+        this.collection.models[0].view.$el.addClass('active');
+
     }
 });
